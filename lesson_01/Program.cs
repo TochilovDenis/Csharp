@@ -16,9 +16,10 @@ namespace lesson_01
             Console.WriteLine($"Остаток от деления на 3: {num%3}");
 
             if (num <= 0 || num >= 100) Console.WriteLine("Error");
-            else if (num % 3 == 0) Console.WriteLine("Fizz");
-            else if (num % 5 == 0) Console.WriteLine("Buzz");
-            else if (num % 3 != 0 && num % 5 != 0) Console.WriteLine(num);
+            Console.WriteLine(num % 3 == 0 ? "Fizz" : null);
+            Console.WriteLine(num % 5 == 0 ? "Buzz" : null);
+            Console.WriteLine(num % 3 != 0 && num % 5 != 0 ? Convert.ToString(num): null);
+
 
         }
     }
