@@ -13,7 +13,7 @@ namespace lesson_01
             string name = "Tom";
             int age = 34;
             double height = 1.7;
-            Console.WriteLine($"Имя: {name}  Возраст: {age}  Рост: {height}м");
+            Console.WriteLine("Имя: {0}  Возраст: {2}  Рост: {1}м", name, height, age);
         }
     }
 }
