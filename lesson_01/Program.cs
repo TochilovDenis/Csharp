@@ -10,13 +10,11 @@ namespace lesson_01
     {
         static void Main(string[] args)
         {
-            Console.WriteLine("Введите Ваше Имя: ");
-            string name;
-            name = Console.ReadLine();
-            if (name == "")
-                Console.WriteLine("Привет, Мир!!!");
-            else
-                Console.WriteLine("Привет, " + name + "!");
+            string hello = "Привет мир";
+            Console.WriteLine(hello);
+            Console.WriteLine("Добро пожаловать в C#!");
+            Console.WriteLine("Пока мир...");
+            Console.WriteLine(24.5);
         }
     }
 }
