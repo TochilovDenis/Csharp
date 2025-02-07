@@ -10,19 +10,12 @@ namespace lesson_01
     {
         static void Main(string[] args)
         {
-            Console.Write("Введите имя: ");
-            string name = Console.ReadLine();
+            int num = Convert.ToInt32(Console.ReadLine());
+            Console.WriteLine($"Остаток от деления на 3: {num%3}");
+            if (num <= 0 || num >= 100) Console.WriteLine("Error");
 
-            Console.Write("Введите возраст: ");
-            int age = Convert.ToInt32(Console.ReadLine());
-
-            Console.Write("Введите рост: ");
-            double height = Convert.ToDouble(Console.ReadLine());
-
-            Console.Write("Введите размер зарплаты: ");
-            decimal salary = Convert.ToDecimal(Console.ReadLine());
-
-            Console.WriteLine($"Имя: {name}  Возраст: {age}  Рост: {height}м  Зарплата: {salary}$");
+            if (num % 3 == 0) Console.WriteLine("Fizz");
+            else Console.WriteLine("Buzz");
         }
     }
 }
