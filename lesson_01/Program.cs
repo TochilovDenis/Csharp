@@ -9,19 +9,13 @@ namespace lesson_01
 {
     internal class Program
     {
+
         static void Main(string[] args)
         {
-            String num = "";
-            String mas = "";
-            while(true)
-            {
-                Console.WriteLine("Введите 4 цифры: ");
-                num = Console.ReadLine();
-                if (num == "end") break;
-                mas += num;
-            }
-            int a = Convert.ToInt32(mas) + 1;
-            Console.WriteLine("Число num + 1" + a);
+            Console.WriteLine("Введите дату: ");
+            String date = Console.ReadLine();
+            DateTime dateTime = Convert.ToDateTime(date);
+            Console.WriteLine("Наша дата " + dateTime.ToString("dddd.MMM.yyy"));
         }
 
         void fizz_puzz()
@@ -35,6 +29,20 @@ namespace lesson_01
             Console.WriteLine(num % 3 == 0 ? "Fizz" : null);
             Console.WriteLine(num % 5 == 0 ? "Buzz" : null);
             Console.WriteLine(num % 3 != 0 && num % 5 != 0 ? Convert.ToString(num) : null);
+        }
+
+        void enter_int() {
+            String num = "";
+            String mas = "";
+            while (true)
+            {
+                Console.WriteLine("Введите 4 цифры: ");
+                num = Console.ReadLine();
+                if (num == "end") break;
+                mas += num;
+            }
+            int a = Convert.ToInt32(mas) + 1;
+            Console.WriteLine("Число num + 1" + a);
         }
     }
 }
