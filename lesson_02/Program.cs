@@ -10,10 +10,8 @@ namespace lesson_02
     {
         static void Main(string[] args)
         {
-            Person Denis = new Person();
+            Person Denis = new Person("Денис", 34);
 
-            Denis.name = "Денис";
-            Denis.age = 34;
             Denis.Print();
         }
 
