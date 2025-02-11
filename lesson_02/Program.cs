@@ -12,32 +12,19 @@ namespace lesson_02
     {
         static void Main(string[] args)
         {
-            int a = 2;
-            int b = 4;
-            
-            Console.WriteLine(1 + 3);
-
-            String h = calc2(a, b);
-            Console.WriteLine(h);
-
-            String calc2(int a1, int b1)
-            {
-                int x = a1 + b1;
-
-                //String c = Convert.ToString(x);
-                //return $"{c}";
-
-                return "Получилось:" + x.ToString() + ". или получилось:" + Convert.ToString(x);
-            }
+            int n = 5;
+            Console.WriteLine(Factorial(n));
+  
         }
 
-        static String calc(int a, int b) {
-            int x = a + b;
+        static int Factorial(int n)
+        {
+            if (n == 1) return 1;
 
-            //String c = Convert.ToString(x);
-            //return $"{c}";
+            int c = n * Factorial(n - 1);
+            Console.WriteLine(c);
 
-            return "Получилось"+x.ToString()+". или получилось:"+Convert.ToString(x);
+            return c;
         }
     }
 }
