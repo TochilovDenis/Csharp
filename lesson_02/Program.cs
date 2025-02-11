@@ -13,18 +13,16 @@ namespace lesson_02
         static void Main(string[] args)
         {
             int n = 5;
-            Console.WriteLine(Factorial(n));
-  
+            test(n);
         }
 
-        static int Factorial(int n)
+        static void test(int n)
         {
-            if (n == 1) return 1;
+            if (n == 20) return ;
 
-            int c = n * Factorial(n - 1);
-            Console.WriteLine(c);
-
-            return c;
+            n++;
+            Console.WriteLine(n);   
+            test(n);
         }
     }
 }
