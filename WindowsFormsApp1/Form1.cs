@@ -27,14 +27,14 @@ namespace WindowsFormsApp1
         private void button1_Click(object sender, EventArgs e)
         {
             var = 1;
-            textBox3.Text = "1";
+            textBox3.Text = var.ToString();
 
         }
 
         private void button2_Click(object sender, EventArgs e)
         {
             var = 2;
-            textBox3.Text = "2";
+            textBox3.Text = var.ToString();
 
         }
 
@@ -66,6 +66,5 @@ namespace WindowsFormsApp1
             fnc = "-";
             textBox2.Text = "-";
         }
-
     }   
 }
