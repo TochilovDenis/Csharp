@@ -160,10 +160,5 @@ namespace WindowsFormsApp2
             textBox3.Text = "";
         }
 
-        private void label1_Click(object sender, EventArgs e)
-        {
-
-        }
-
     }
 }
