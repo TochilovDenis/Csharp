@@ -65,4 +65,36 @@ namespace lesson_03
         }
     }
 }
-}
+    public void ReadData()
+        {
+            SqlDataReader rdr = null;
+            try
+            { //открыть соединение
+                conn.Open();
+                //создать новый объект command с запросом select
+                SqlCommand cmd = new SqlCommand("select * from Authors", conn);
+                //выполнить запрос select, сохранив
+                //возвращенный результат
+                rdr = cmd.ExecuteReader();
+                //извлечь полученные строки
+                while (rdr.Read())
+                {
+                    Console.WriteLine(rdr[1] + " " + rdr[2]);
+                }
+            }
+            finally
+            {
+                //закрыть reader
+                if (rdr != null)
+                {
+                    rdr.Close();
+                }
+                //закрыть соединение
+                if (conn != null)
+                {
+                    conn.Close();
+                }
+            }
+        }
+
+    }
