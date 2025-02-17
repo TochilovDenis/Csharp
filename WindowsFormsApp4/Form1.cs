@@ -4,6 +4,7 @@ using System.ComponentModel;
 using System.Configuration;
 using System.Data;
 using System.Data.SqlClient;
+using System.Diagnostics;
 using System.Drawing;
 using System.Linq;
 using System.Net;
@@ -38,13 +39,20 @@ namespace WindowsFormsApp4
             {
                 SqlConnection conn =  new SqlConnection(cs);
                 set = new DataSet();
-                string sql = textBox1.Text;
+                string sql = "SELECT * FROM Authors;" + "SELECT * FROM Books;";
                 da = new SqlDataAdapter(sql, conn);
                 dataGridView1.DataSource = null;
                 cmd = new SqlCommandBuilder(da);
-                da.Fill(set, "mybook");
-                dataGridView1.DataSource =
-                set.Tables["mybook"];
+
+                //Debug.WriteLine(cmd.GetInsertCommand().CommandText);
+                //Debug.WriteLine(cmd.GetUpdateCommand().CommandText);
+                //Debug.WriteLine(cmd.GetDeleteCommand().CommandText);
+
+                da.TableMappings.Add("Table", "Authors");
+                da.TableMappings.Add("Table1", "Books");
+                da.Fill(set);
+
+                dataGridView1.DataSource = set.Tables["Books"];
             }
             catch (Exception ex)
             {
