@@ -39,7 +39,7 @@ namespace WindowsFormsApp4
             {
                 SqlConnection conn =  new SqlConnection(cs);
                 set = new DataSet();
-                string sql = "SELECT * FROM Authors;" + "SELECT * FROM Books;";
+                string sql = "SELECT id, FirstName, LastName FROM Authors; ";
                 da = new SqlDataAdapter(sql, conn);
                 dataGridView1.DataSource = null;
                 cmd = new SqlCommandBuilder(da);
@@ -52,7 +52,8 @@ namespace WindowsFormsApp4
                 da.TableMappings.Add("Table1", "Books");
                 da.Fill(set);
 
-                dataGridView1.DataSource = set.Tables["Books"];
+                dataGridView1.DataSource = set.Tables["Authors"];
+                dataGridView2.DataSource = set.Tables["Books"];
             }
             catch (Exception ex)
             {
