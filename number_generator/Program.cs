@@ -14,7 +14,7 @@ namespace number_generator
         static int[] numbers = new int[SIZE];
         static int maxValue = int.MinValue;
         static int minValue = int.MaxValue;
-
+        static long sum = 0;
         static readonly object locker = new object();
 
         static void Main(string[] args)
@@ -28,16 +28,20 @@ namespace number_generator
 
             Thread maxThread = new Thread(FindMaximum);
             Thread minThread = new Thread(FindMinimum);
+            Thread avgThread = new Thread(FindAverage);
 
 
             maxThread.Start();
             minThread.Start();
+            avgThread.Start();
 
             maxThread.Join();
             minThread.Join();
+            avgThread.Join();
 
             Console.WriteLine($"Максимальное значение: {maxValue}");
             Console.WriteLine($"Минимальное значение: {minValue}");
+            Console.WriteLine($"Среднее значение: {sum / SIZE:F2}");
         }
 
 
@@ -71,6 +75,21 @@ namespace number_generator
             }
         }
 
+        // Поиск среднее значение
+        static void FindAverage()
+        {
+            long localSum = 0;
+
+            for (int i = 0; i < SIZE; i++)
+            {
+                localSum += numbers[i];
+            }
+
+            lock (locker)
+            {
+                sum += localSum;
+            }
+        }
     }
 }
 
