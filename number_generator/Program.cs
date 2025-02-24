@@ -13,6 +13,7 @@ namespace number_generator
         const int SIZE = 1000;
         static int[] numbers = new int[SIZE];
         static int maxValue = int.MinValue;
+        static int minValue = int.MaxValue;
 
         static readonly object locker = new object();
 
@@ -26,10 +27,17 @@ namespace number_generator
             }
 
             Thread maxThread = new Thread(FindMaximum);
+            Thread minThread = new Thread(FindMinimum);
+
 
             maxThread.Start();
+            minThread.Start();
+
             maxThread.Join();
+            minThread.Join();
+
             Console.WriteLine($"Максимальное значение: {maxValue}");
+            Console.WriteLine($"Минимальное значение: {minValue}");
         }
 
 
@@ -47,6 +55,22 @@ namespace number_generator
                 if (localMax > maxValue) maxValue = localMax;
             }
         }
+
+        // Поиск минимальное число
+        static void FindMinimum()
+        {
+            int localMin = int.MaxValue;
+            for (int i = 0; i < SIZE; i++)
+            {
+                if (numbers[i] < localMin) localMin = numbers[i];
+            }
+
+            lock (locker)
+            {
+                if (localMin < minValue) minValue = localMin;
+            }
+        }
+
     }
 }
 
