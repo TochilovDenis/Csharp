@@ -4,10 +4,10 @@
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
-    <ProjectGuid>{B464704E-68AC-4557-8B8D-89F1F9ADFEDD}</ProjectGuid>
+    <ProjectGuid>{5D22F7FD-148B-42EB-A494-6ADA8C448291}</ProjectGuid>
     <OutputType>Exe</OutputType>
-    <RootNamespace>exam_ADO.net</RootNamespace>
-    <AssemblyName>exam_ADO.net</AssemblyName>
+    <RootNamespace>number_generator</RootNamespace>
+    <AssemblyName>number_generator</AssemblyName>
     <TargetFrameworkVersion>v4.7.2</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
     <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
@@ -43,12 +43,8 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="MusicStoreDB.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="Reservation.cs" />
-    <Compile Include="Sale.cs" />
-    <Compile Include="VinylRecord .cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />

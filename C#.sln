@@ -17,6 +17,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "lesson_03", "lesson_03\less
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WindowsFormsApp4", "WindowsFormsApp4\WindowsFormsApp4.csproj", "{418F9E8D-4F51-4CBB-AE6F-ED4F3200D95C}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "exam_ADO.net", "exam_ADO.net\exam_ADO.net.csproj", "{B464704E-68AC-4557-8B8D-89F1F9ADFEDD}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -51,8 +53,15 @@ Global
 		{418F9E8D-4F51-4CBB-AE6F-ED4F3200D95C}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{418F9E8D-4F51-4CBB-AE6F-ED4F3200D95C}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{418F9E8D-4F51-4CBB-AE6F-ED4F3200D95C}.Release|Any CPU.Build.0 = Release|Any CPU
+		{B464704E-68AC-4557-8B8D-89F1F9ADFEDD}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{B464704E-68AC-4557-8B8D-89F1F9ADFEDD}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{B464704E-68AC-4557-8B8D-89F1F9ADFEDD}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{B464704E-68AC-4557-8B8D-89F1F9ADFEDD}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {3C828510-0776-48B5-9B46-8B8AA098966A}
 	EndGlobalSection
 EndGlobal
