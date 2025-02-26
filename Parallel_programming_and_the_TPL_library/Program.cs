@@ -12,8 +12,11 @@ namespace Parallel_programming_and_the_TPL_library
         {
             Task task = new Task(() => Console.WriteLine("Hello Task!"));
             Task task2 = Task.Factory.StartNew(() => Console.WriteLine("Hello Task 2!"));
+            Task task3 = Task.Run(() => Console.WriteLine("Hello Task 3!"));
+
             task.Start();
             task.Wait();
+
 
         }
     }
