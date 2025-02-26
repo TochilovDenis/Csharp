@@ -12,6 +12,8 @@ namespace Parallel_programming_and_the_TPL_library
         {
             Task task = new Task(() => Console.WriteLine("Hello Task!"));
             task.Start();
+            task.Wait();
+
         }
     }
 }
