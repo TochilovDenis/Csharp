@@ -12,15 +12,18 @@ namespace Parallel_programming_and_the_TPL_library
         static void Main(string[] args)
         {
             Console.WriteLine("Main Starts");
-            // создаем задачу
             Task task1 = Task.Run(() =>
             {
-                Console.WriteLine("Task Starts");
-                Thread.Sleep(1000);     // задержка на 1 секунду - имитация долгой работы
-                Console.WriteLine("Task Ends");
+                Console.WriteLine($"Task {Task.CurrentId} Starts");
+                Thread.Sleep(1000);
+                Console.WriteLine($"Task {Task.CurrentId} Ends");
             });
-            task1.Wait();   // ожидаем выполнения задачи
+            Console.WriteLine($"Task Id: {task1.Id}");
+            Console.WriteLine($"Task Is Completed: {task1.IsCompleted}");
+            Console.WriteLine($"Task.Status: {task1.Status}");
+
             Console.WriteLine("Main Ends");
+            task1.Wait();
         }
     }
 }
