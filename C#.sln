@@ -23,6 +23,10 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "number_generator", "number_
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Parallel_programming_and_the_TPL_library", "Parallel_programming_and_the_TPL_library\Parallel_programming_and_the_TPL_library.csproj", "{BCA94681-BFEF-4B52-A4F8-5DB8303B3AF6}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Task__Time_and_Date", "Task__Time_and_Date\Task__Time_and_Date.csproj", "{4D077608-AE48-4D12-8E9B-20338DD1676A}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Number_Task", "Number_Task\Number_Task.csproj", "{F5D4C71B-8B18-4A73-95DF-D8EA05DE187D}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -69,6 +73,14 @@ Global
 		{BCA94681-BFEF-4B52-A4F8-5DB8303B3AF6}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{BCA94681-BFEF-4B52-A4F8-5DB8303B3AF6}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{BCA94681-BFEF-4B52-A4F8-5DB8303B3AF6}.Release|Any CPU.Build.0 = Release|Any CPU
+		{4D077608-AE48-4D12-8E9B-20338DD1676A}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{4D077608-AE48-4D12-8E9B-20338DD1676A}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{4D077608-AE48-4D12-8E9B-20338DD1676A}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{4D077608-AE48-4D12-8E9B-20338DD1676A}.Release|Any CPU.Build.0 = Release|Any CPU
+		{F5D4C71B-8B18-4A73-95DF-D8EA05DE187D}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{F5D4C71B-8B18-4A73-95DF-D8EA05DE187D}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{F5D4C71B-8B18-4A73-95DF-D8EA05DE187D}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{F5D4C71B-8B18-4A73-95DF-D8EA05DE187D}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
