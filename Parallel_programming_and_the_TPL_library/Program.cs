@@ -10,6 +10,8 @@ namespace Parallel_programming_and_the_TPL_library
     {
         static void Main(string[] args)
         {
+            Task task = new Task(() => Console.WriteLine("Hello Task!"));
+            task.Start();
         }
     }
 }
