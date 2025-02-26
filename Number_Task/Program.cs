@@ -10,24 +10,35 @@ namespace Number_Task
     {
         static void Main(string[] args)
         {
-            // Создаем задачу для поиска простых чисел
-            Task task = Task.Run(() =>
-            {
-                Console.WriteLine("Поиск простых чисел от 0 до 1000:");
+            Console.Write("Введите нижнюю границу: ");
+            int lowerBound = Convert.ToInt32(Console.ReadLine());
 
-                // Находим и выводим все простые числа
-                for (int i = 0; i <= 1000; i++)
+            Console.Write("Введите верхнюю границу: ");
+            int upperBound = Convert.ToInt32(Console.ReadLine());
+
+            // Создаем задачу для поиска простых чисел
+            Task<int> task = Task.Run(() =>
+            {
+                Console.WriteLine($"Поиск простых чисел от {lowerBound} до {upperBound}:");
+
+                // Находим все простые числа в диапазоне и считаем их количество
+                int count = 0;
+                for (int i = lowerBound; i <= upperBound; i++)
                 {
                     if (IsPrime(i))
                     {
                         Console.Write($"{i} ");
+                        count++;
                     }
                 }
                 Console.WriteLine("\nПоиск завершен!");
+                return count;
             });
 
-            // Ожидаем завершения задачи
-            task.Wait();
+            // Ожидаем завершения задачи и получаем результат
+            int primeCount = task.Result;
+
+            Console.WriteLine($"\nНайдено {primeCount} простых чисел.");
         }
 
         static bool IsPrime(int number)
