@@ -37,6 +37,9 @@ namespace Working_with_Task_class
                 tasks[i].Start();   // запускаем задачу
             }
             Console.WriteLine("Завершение метода Main");
+
+            Task.WaitAll(tasks); // ожидаем завершения всех задач
+
         }
     }
 }
