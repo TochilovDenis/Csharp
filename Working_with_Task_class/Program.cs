@@ -11,18 +11,15 @@ namespace Working_with_Task_class
     {
         static void Main(string[] args)
         {
-            var outer = Task.Factory.StartNew(() =>      // внешняя задача
+            Task[] tasks1 = new Task[3]
             {
-                Console.WriteLine("Outer task starting...");
-                var inner = Task.Factory.StartNew(() =>  // вложенная задача
-                {
-                    Console.WriteLine("Inner task starting...");
-                    Thread.Sleep(2000);
-                    Console.WriteLine("Inner task finished.");
-                });
-            });
-            outer.Wait(); // ожидаем выполнения внешней задачи
-            Console.WriteLine("End of Main");
+                new Task(() => Console.WriteLine("First Task")),
+                new Task(() => Console.WriteLine("Second Task")),
+                new Task(() => Console.WriteLine("Third Task"))
+             };
+            // запуск задач в массиве
+            foreach (var t in tasks1)
+                t.Start();
         }
     }
 }
