@@ -10,26 +10,40 @@ namespace Number_Task
     {
         static void Main(string[] args)
         {
-            Task number = Task.Run(() =>
+            // Создаем задачу для поиска простых чисел
+            Task task = Task.Run(() =>
             {
-                for (int i = 2; i < 1001; i++)
+                Console.WriteLine("Поиск простых чисел от 0 до 1000:");
+
+                // Находим и выводим все простые числа
+                for (int i = 0; i <= 1000; i++)
                 {
-                    int res = 0;
-                    for (int j = 2; j * j <= i; j++)
+                    if (IsPrime(i))
                     {
-                        if (i % j == 0)
-                        {
-                            res += 1;
-                        }
-                    }
-                    if (res == 2)
-                    {
-                        Console.WriteLine($"Number : {i}");
+                        Console.Write($"{i} ");
                     }
                 }
+                Console.WriteLine("\nПоиск завершен!");
             });
-            number.Wait();
-            Console.WriteLine("End main");
+
+            // Ожидаем завершения задачи
+            task.Wait();
+        }
+
+        static bool IsPrime(int number)
+        {
+            if (number <= 1) return false;
+            if (number == 2) return true;
+            if (number % 2 == 0) return false;
+
+            var boundary = (int)Math.Floor(Math.Sqrt(number));
+
+            for (int i = 3; i <= boundary; i += 2)
+            {
+                if (number % i == 0) return false;
+            }
+
+            return true;
         }
     }
 }
