@@ -11,21 +11,20 @@ namespace Continuation_tasks
     {
         static void Main(string[] args)
         {
-            Task<int> sumTask = new Task<int>(() => Sum(4, 5));
+            Task task1 = new Task(() => Console.WriteLine($"Current Task: {Task.CurrentId}"));
 
             // задача продолжения
-            Task printTask = sumTask.ContinueWith(task => PrintResult(task.Result));
+            Task task2 = task1.ContinueWith(t => Console.WriteLine($"Current Task: {Task.CurrentId}  Previous Task: {t.Id}"));
 
-            sumTask.Start();
+            Task task3 = task2.ContinueWith(t => Console.WriteLine($"Current Task: {Task.CurrentId}  Previous Task: {t.Id}"));
 
-            // ждем окончания второй задачи
-            printTask.Wait();
+
+            Task task4 = task3.ContinueWith(t => Console.WriteLine($"Current Task: {Task.CurrentId}  Previous Task: {t.Id}"));
+
+            task1.Start();
+
+            task4.Wait();   //  ждем завершения последней задачи
             Console.WriteLine("Конец метода Main");
-
-            //int Sum(int a, int b) => a + b;
-            int Sum(int a, int b) { return a + b; };
-
-            void PrintResult(int sum) => Console.WriteLine($"Sum: {sum}");
         }
     }
 }
