@@ -11,12 +11,15 @@ namespace Class_Parallel
     {
         static void Main(string[] args)
         {
-            ParallelLoopResult result = Parallel.ForEach<int>(new List<int>() { 1, 3, 5, 8 }, Square);
+            ParallelLoopResult result = Parallel.For(1, 10, Square);
+            if (!result.IsCompleted)
+                Console.WriteLine($"Выполнение цикла завершено на итерации {result.LowestBreakIteration}");
 
             // вычисляем квадрат числа
-            void Square(int n)
+            void Square(int n, ParallelLoopState pls)
             {
-                Console.WriteLine($"Выполняется задача {Task.CurrentId}");
+                if (n == 5) pls.Break();    // если передано 5, выходим из цикла
+
                 Console.WriteLine($"Квадрат числа {n} равен {n * n}");
                 Thread.Sleep(2000);
             }
