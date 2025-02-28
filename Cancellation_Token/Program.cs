@@ -14,31 +14,47 @@ namespace Cancellation_Token
             CancellationTokenSource cancelTokenSource = new CancellationTokenSource();
             CancellationToken token = cancelTokenSource.Token;
 
-            // задача вычисляет квадраты чисел
-            Task task = new Task(() =>
+            Task task = new Task(() => PrintSquares(token), token);
+            try
             {
-                int i = 1;
-                token.Register(() =>
-                {
-                    Console.WriteLine("Операция прервана");
-                    i = 10;
-                });
-                for (; i < 10; i++)
-                {
-                    Console.WriteLine($"Квадрат числа {i} равен {i * i}");
-                    Thread.Sleep(400);
-                }
-            }, token);
-            task.Start();
+                task.Start();
+                Thread.Sleep(1000);
+                // после задержки по времени отменяем выполнение задачи
+                cancelTokenSource.Cancel();
 
-            Thread.Sleep(1000);
-            // после задержки по времени отменяем выполнение задачи
-            cancelTokenSource.Cancel();
-            // ожидаем завершения задачи
-            Thread.Sleep(1000);
+                // ожидаем завершения задачи
+                task.Wait();
+            }
+            catch (AggregateException ae)
+            {
+                foreach (Exception e in ae.InnerExceptions)
+                {
+                    if (e is TaskCanceledException)
+                        Console.WriteLine("Операция прервана");
+                    else
+                        Console.WriteLine(e.Message);
+                }
+            }
+            finally
+            {
+                cancelTokenSource.Dispose();
+            }
+
             //  проверяем статус задачи
             Console.WriteLine($"Task Status: {task.Status}");
-            cancelTokenSource.Dispose(); // освобождаем ресурсы
+
+
+            void PrintSquares(CancellationToken t)
+            {
+                for (int i = 1; i < 10; i++)
+                {
+                    if (t.IsCancellationRequested)
+                        t.ThrowIfCancellationRequested(); // генерируем исключение
+
+                    Console.WriteLine($"Квадрат числа {i} равен {i * i}");
+                    Thread.Sleep(200);
+                }
+            }
         }
     }
 }
