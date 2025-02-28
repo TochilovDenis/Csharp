@@ -11,7 +11,7 @@ namespace Class_Parallel
     {
         static void Main(string[] args)
         {
-            Parallel.For(1, 5, Square);
+            ParallelLoopResult result = Parallel.ForEach<int>(new List<int>() { 1, 3, 5, 8 }, Square);
 
             // вычисляем квадрат числа
             void Square(int n)
