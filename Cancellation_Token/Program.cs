@@ -14,44 +14,31 @@ namespace Cancellation_Token
             CancellationTokenSource cancelTokenSource = new CancellationTokenSource();
             CancellationToken token = cancelTokenSource.Token;
 
+            // задача вычисляет квадраты чисел
             Task task = new Task(() =>
             {
-                for (int i = 1; i < 10; i++)
+                int i = 1;
+                token.Register(() =>
                 {
-                    if (token.IsCancellationRequested)
-                        token.ThrowIfCancellationRequested(); // генерируем исключение
-
+                    Console.WriteLine("Операция прервана");
+                    i = 10;
+                });
+                for (; i < 10; i++)
+                {
                     Console.WriteLine($"Квадрат числа {i} равен {i * i}");
-                    Thread.Sleep(200);
+                    Thread.Sleep(400);
                 }
             }, token);
-            try
-            {
-                task.Start();
-                Thread.Sleep(1000);
-                // после задержки по времени отменяем выполнение задачи
-                cancelTokenSource.Cancel();
+            task.Start();
 
-                // ожидаем завершения задачи
-                Thread.Sleep(1000);
-            }
-            catch (AggregateException ae)
-            {
-                foreach (Exception e in ae.InnerExceptions)
-                {
-                    if (e is TaskCanceledException)
-                        Console.WriteLine("Операция прервана");
-                    else
-                        Console.WriteLine(e.Message);
-                }
-            }
-            finally
-            {
-                cancelTokenSource.Dispose();
-            }
-
+            Thread.Sleep(1000);
+            // после задержки по времени отменяем выполнение задачи
+            cancelTokenSource.Cancel();
+            // ожидаем завершения задачи
+            Thread.Sleep(1000);
             //  проверяем статус задачи
             Console.WriteLine($"Task Status: {task.Status}");
+            cancelTokenSource.Dispose(); // освобождаем ресурсы
         }
     }
 }
