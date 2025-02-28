@@ -16,29 +16,23 @@ namespace Checking_number
             ParallelLoopResult result = Parallel.For(1, 1000, prime_number);
 
             if (!result.IsCompleted)
-                Console.WriteLine($"Выполнение цикла завершено на итерации {{result.LowestBreakIteration}}");
+                Console.WriteLine($"Выполнение цикла завершено на итерации {result.LowestBreakIteration}");
 
-            int prime_number(int min, int max, ParallelLoopState pls)
+            void prime_number(int n)
             {
-                int sum = 0;
-
-                for (int i = min; i < max; i++)
+                int res = 0;
+                Console.WriteLine($"Проверяем {n}");
+                for (int i = 1; i < n; i++)
                 {
-                    int res = 0;
-                    for (int b = 1; b < i + 1; b++)
+                    if (n % i == 0)
                     {
-                        if (i % b == 0)
-                        {
-                            res += 1;
-                        }
+                        res += 1;
                     }
                     if (res == 2)
                     {
-                        sum++;
-                        Console.WriteLine($"Number : {i}");
+                        Console.WriteLine($"Простое число : {n}");
                     }
                 }
-                return sum;
             }
         }
     }
