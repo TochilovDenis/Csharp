@@ -32,7 +32,8 @@ namespace Cancellation_Token
                 // после задержки по времени отменяем выполнение задачи
                 cancelTokenSource.Cancel();
 
-                task.Wait(); // ожидаем завершения задачи
+                // ожидаем завершения задачи
+                Thread.Sleep(1000);
             }
             catch (AggregateException ae)
             {
