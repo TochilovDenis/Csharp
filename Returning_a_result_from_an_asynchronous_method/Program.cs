@@ -10,6 +10,14 @@ namespace Returning_a_result_from_an_asynchronous_method
     {
         static async Task Main(string[] args)
         {
+            await PrintAsync("Hello Metanit.com");
+
+            // определение асинхронного метода
+            async Task PrintAsync(string message)
+            {
+                await Task.Delay(1000);     // имитация продолжительной работы
+                Console.WriteLine(message);
+            }
         }
     }
 }
