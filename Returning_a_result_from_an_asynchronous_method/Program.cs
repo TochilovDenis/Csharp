@@ -10,16 +10,14 @@ namespace Returning_a_result_from_an_asynchronous_method
     {
         static async Task Main(string[] args)
         {
-            var task = PrintAsync("Hello Metanit.com"); // задача начинает выполняться
-            Console.WriteLine("Main Works");
+            int n1 = await SquareAsync(5);
+            int n2 = await SquareAsync(6);
+            Console.WriteLine($"n1={n1}  n2={n2}"); // n1=25  n2=36
 
-            await task; // ожидаем завершения задачи
-
-            // определение асинхронного метода
-            async Task PrintAsync(string message)
+            async Task<int> SquareAsync(int n)
             {
-                await Task.Delay(3000);
-                Console.WriteLine(message);
+                await Task.Delay(0);
+                return n * n;
             }
         }
     }
