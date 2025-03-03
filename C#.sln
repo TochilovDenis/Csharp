@@ -47,6 +47,10 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Sequential_and_parallel_exe
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Asynchrony_in_practice", "Asynchrony_in_practice\Asynchrony_in_practice.csproj", "{86F1E6EC-03A1-4E77-8352-7A7ADE5CE93E}"
 EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "LINQ Basics", "LINQ Basics", "{36D591C7-65C7-A0D1-1CBC-10CDE441BDC8}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "LINQ Basics", "LINQ Basics\LINQ Basics.csproj", "{A2005E59-1BE0-471B-9FB7-A5022A62FE49}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -141,9 +145,16 @@ Global
 		{86F1E6EC-03A1-4E77-8352-7A7ADE5CE93E}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{86F1E6EC-03A1-4E77-8352-7A7ADE5CE93E}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{86F1E6EC-03A1-4E77-8352-7A7ADE5CE93E}.Release|Any CPU.Build.0 = Release|Any CPU
+		{A2005E59-1BE0-471B-9FB7-A5022A62FE49}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{A2005E59-1BE0-471B-9FB7-A5022A62FE49}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{A2005E59-1BE0-471B-9FB7-A5022A62FE49}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{A2005E59-1BE0-471B-9FB7-A5022A62FE49}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(NestedProjects) = preSolution
+		{A2005E59-1BE0-471B-9FB7-A5022A62FE49} = {36D591C7-65C7-A0D1-1CBC-10CDE441BDC8}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {3C828510-0776-48B5-9B46-8B8AA098966A}
