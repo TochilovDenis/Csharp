@@ -10,14 +10,21 @@ namespace Returning_a_result_from_an_asynchronous_method
     {
         static async Task Main(string[] args)
         {
-            int n1 = await SquareAsync(5);
-            int n2 = await SquareAsync(6);
+            var square5 = SquareAsync(5);
+            var square6 = SquareAsync(6);
+
+            Console.WriteLine("Остальные действия в методе Main");
+
+            int n1 = await square5;
+            int n2 = await square6;
             Console.WriteLine($"n1={n1}  n2={n2}"); // n1=25  n2=36
 
             async Task<int> SquareAsync(int n)
             {
                 await Task.Delay(0);
-                return n * n;
+                var result = n * n;
+                Console.WriteLine($"Квадрат числа {n} равен {result}");
+                return result;
             }
         }
     }
