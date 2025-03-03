@@ -11,9 +11,13 @@ namespace Asynchronous_programming
     {
         static async Task Main(string[] args)
         {
+
+            //слово async, которое указывается в определении метода, НЕ делает автоматически метод асинхронным.
+            //Оно лишь указывает, что данный метод может содержать одно или несколько выражений await.
+
             Console.WriteLine("Начало выполнения программы");
 
-            PrintAsync();
+            await PrintAsync();
 
             Console.WriteLine("Конец выполнения программы");
 
@@ -28,7 +32,7 @@ namespace Asynchronous_programming
             {
                 Console.WriteLine("Начало метода PrintAsync");
 
-                Task.Run(Print);
+                await Task.Run(Print);
                 
                 Console.WriteLine("Конец метода PrintAsync");
             }
