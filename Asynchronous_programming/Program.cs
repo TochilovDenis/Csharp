@@ -31,8 +31,8 @@ namespace Asynchronous_programming
             async Task PrintAsync()
             {
                 Console.WriteLine("Начало метода PrintAsync");
-
-                await Task.Run(Print);
+                await Task.Delay(3000);
+               // await Task.Run(Print);
                 
                 Console.WriteLine("Конец метода PrintAsync");
             }
