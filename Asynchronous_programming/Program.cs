@@ -11,20 +11,15 @@ namespace Asynchronous_programming
     {
         static async Task Main(string[] args)
         {
-            var tomTask = PrintNameAsync("Tom");
-            var bobTask = PrintNameAsync("Bob");
-            var samTask = PrintNameAsync("Sam");
-
-            await tomTask;
-            await bobTask;
-            await samTask;
-
-            // определение асинхронного метода
-            async Task PrintNameAsync(string name)
+            // асинхронное лямбда-выражение
+            Func<string, Task> printer = async (message) =>
             {
-                await Task.Delay(3000);     // имитация продолжительной работы
-                Console.WriteLine(name);
-            }
+                await Task.Delay(1000);
+                Console.WriteLine(message);
+            };
+
+            await printer("Hello World");
+            await printer("Hello METANIT.COM");
         }
     }
 }
