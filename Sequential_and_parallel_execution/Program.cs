@@ -15,11 +15,9 @@ namespace Sequential_and_parallel_execution
             var task2 = SquareAsync(5);
             var task3 = SquareAsync(6);
 
-            // ожидаем завершения всех задач
-            int[] results = await Task.WhenAll(task1, task2, task3);
-            // получаем результаты:
-            foreach (int result in results)
-                Console.WriteLine(result);
+            await Task.WhenAll(task1, task2, task3);
+            // получаем результат задачи task2
+            Console.WriteLine($"task2 result: {task2.Result}"); // task2 result: 25
 
             async Task<int> SquareAsync(int n)
             {
