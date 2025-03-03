@@ -39,6 +39,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Checking_number", "Checking
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Cancellation_Token", "Cancellation_Token\Cancellation_Token.csproj", "{26DF9A74-36B2-436F-A908-C9852CA53A53}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Asynchronous_programming", "Asynchronous_programming\Asynchronous_programming.csproj", "{924B6A17-A60C-475C-A9F3-E86D2A2EF554}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -117,6 +119,10 @@ Global
 		{26DF9A74-36B2-436F-A908-C9852CA53A53}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{26DF9A74-36B2-436F-A908-C9852CA53A53}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{26DF9A74-36B2-436F-A908-C9852CA53A53}.Release|Any CPU.Build.0 = Release|Any CPU
+		{924B6A17-A60C-475C-A9F3-E86D2A2EF554}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{924B6A17-A60C-475C-A9F3-E86D2A2EF554}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{924B6A17-A60C-475C-A9F3-E86D2A2EF554}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{924B6A17-A60C-475C-A9F3-E86D2A2EF554}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
