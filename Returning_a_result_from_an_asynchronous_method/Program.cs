@@ -15,6 +15,9 @@ namespace Returning_a_result_from_an_asynchronous_method
 
             Console.WriteLine("Остальные действия в методе Main");
 
+            Console.WriteLine("Тип переменной square5: " + square5.GetType());
+            Console.WriteLine("Тип переменной await square5: " + (await square5).GetType());
+
             int n1 = await square5;
             int n2 = await square6;
             Console.WriteLine($"n1={n1}  n2={n2}"); // n1=25  n2=36
