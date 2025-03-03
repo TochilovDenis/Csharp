@@ -11,13 +11,24 @@ namespace Returning_a_result_from_an_asynchronous_method
     {
         static async Task Main(string[] args)
         {
-            var result = await AddAsync(4, 5);
-            Console.WriteLine(result);
+            //var result = await AddAsync(4, 5);
+            //Console.WriteLine(result);
 
-            ValueTask<int> AddAsync(int a, int b)
+            //ValueTask<int> AddAsync(int a, int b)
+            //{
+            //    return new ValueTask<int>(a + b);
+            //}
+
+            var getMessage = GetMessageAsync();
+            string message = await getMessage.AsTask();
+            Console.WriteLine(message); // Hello
+
+            async ValueTask<string> GetMessageAsync()
             {
-                return new ValueTask<int>(a + b);
+                await Task.Delay(0);
+                return "Hello";
             }
+
         }
     }
 }
