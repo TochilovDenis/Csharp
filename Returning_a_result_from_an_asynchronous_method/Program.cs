@@ -11,7 +11,13 @@ namespace Returning_a_result_from_an_asynchronous_method
     {
         static async Task Main(string[] args)
         {
-            
+            var result = await AddAsync(4, 5);
+            Console.WriteLine(result);
+
+            Task<int> AddAsync(int a, int b)
+            {
+                return Task.FromResult(a + b);
+            }
         }
     }
 }
