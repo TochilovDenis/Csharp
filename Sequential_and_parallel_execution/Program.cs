@@ -10,9 +10,15 @@ namespace Sequential_and_parallel_execution
     {
         static async Task Main(string[] args)
         {
-            await PrintAsync("Hello C#");
-            await PrintAsync("Hello World");
-            await PrintAsync("Hello METANIT.COM");
+            // определяем и запускаем задачи
+            var task1 = PrintAsync("Hello C#");
+            var task2 = PrintAsync("Hello World");
+            var task3 = PrintAsync("Hello METANIT.COM");
+
+            // ожидаем завершения задач
+            await task1;
+            await task2;
+            await task3;
 
             async Task PrintAsync(string message)
             {
