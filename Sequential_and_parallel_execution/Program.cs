@@ -15,12 +15,12 @@ namespace Sequential_and_parallel_execution
             var task2 = PrintAsync("Hello World");
             var task3 = PrintAsync("Hello METANIT.COM");
 
-            // ожидаем завершения всех задач
-            await Task.WhenAll(task1, task2, task3);
+            // ожидаем завершения хотя бы одной задачи
+            await Task.WhenAny(task1, task2, task3);
 
             async Task PrintAsync(string message)
             {
-                await Task.Delay(2000);     // имитация продолжительной операции
+                await Task.Delay(new Random().Next(1000, 2000));     // имитация продолжительной операции
                 Console.WriteLine(message);
             }
         }
