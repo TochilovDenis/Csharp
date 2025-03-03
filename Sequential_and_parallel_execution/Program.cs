@@ -15,10 +15,8 @@ namespace Sequential_and_parallel_execution
             var task2 = PrintAsync("Hello World");
             var task3 = PrintAsync("Hello METANIT.COM");
 
-            // ожидаем завершения задач
-            await task1;
-            await task2;
-            await task3;
+            // ожидаем завершения всех задач
+            await Task.WhenAll(task1, task2, task3);
 
             async Task PrintAsync(string message)
             {
