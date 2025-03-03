@@ -14,9 +14,9 @@ namespace Returning_a_result_from_an_asynchronous_method
             var result = await AddAsync(4, 5);
             Console.WriteLine(result);
 
-            Task<int> AddAsync(int a, int b)
+            ValueTask<int> AddAsync(int a, int b)
             {
-                return Task.FromResult(a + b);
+                return new ValueTask<int>(a + b);
             }
         }
     }
