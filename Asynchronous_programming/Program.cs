@@ -11,13 +11,15 @@ namespace Asynchronous_programming
     {
         static async Task Main(string[] args)
         {
-            PrintName("Tom");
-            PrintName("Bob");
-            PrintName("Sam");
+            await PrintNameAsync("Tom");
+            await PrintNameAsync("Bob");
+            await PrintNameAsync("Sam");
 
-            void PrintName(string name)
+            // определение асинхронного метода
+            async Task PrintNameAsync(string name)
             {
-                Thread.Sleep(3000);     // имитация продолжительной работы
+                // Thread.Sleep(3000);      // имитация продолжительной работы
+                await Task.Delay(3000);     // имитация продолжительной работы
                 Console.WriteLine(name);
             }
 
