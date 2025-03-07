@@ -17,8 +17,6 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "lesson_03", "lesson_03\less
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WindowsFormsApp4", "WindowsFormsApp4\WindowsFormsApp4.csproj", "{418F9E8D-4F51-4CBB-AE6F-ED4F3200D95C}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "exam_ADO.net", "exam_ADO.net\exam_ADO.net.csproj", "{B464704E-68AC-4557-8B8D-89F1F9ADFEDD}"
-EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "number_generator", "number_generator\number_generator.csproj", "{5D22F7FD-148B-42EB-A494-6ADA8C448291}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Parallel_programming_and_the_TPL_library", "Parallel_programming_and_the_TPL_library\Parallel_programming_and_the_TPL_library.csproj", "{BCA94681-BFEF-4B52-A4F8-5DB8303B3AF6}"
@@ -55,6 +53,8 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "task", "task", "{06BA46D0-E
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "task_01", "task_01\task_01.csproj", "{F11DAF71-B4FB-4E54-BE6F-25D689E48690}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WindowsFormsApp_07.03.25", "WindowsFormsApp_07.03.25\WindowsFormsApp_07.03.25.csproj", "{E9E3438D-4592-452E-BAF5-EC61E0DF1471}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -89,10 +89,6 @@ Global
 		{418F9E8D-4F51-4CBB-AE6F-ED4F3200D95C}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{418F9E8D-4F51-4CBB-AE6F-ED4F3200D95C}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{418F9E8D-4F51-4CBB-AE6F-ED4F3200D95C}.Release|Any CPU.Build.0 = Release|Any CPU
-		{B464704E-68AC-4557-8B8D-89F1F9ADFEDD}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{B464704E-68AC-4557-8B8D-89F1F9ADFEDD}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{B464704E-68AC-4557-8B8D-89F1F9ADFEDD}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{B464704E-68AC-4557-8B8D-89F1F9ADFEDD}.Release|Any CPU.Build.0 = Release|Any CPU
 		{5D22F7FD-148B-42EB-A494-6ADA8C448291}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
 		{5D22F7FD-148B-42EB-A494-6ADA8C448291}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{5D22F7FD-148B-42EB-A494-6ADA8C448291}.Release|Any CPU.ActiveCfg = Release|Any CPU
@@ -157,6 +153,10 @@ Global
 		{F11DAF71-B4FB-4E54-BE6F-25D689E48690}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{F11DAF71-B4FB-4E54-BE6F-25D689E48690}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{F11DAF71-B4FB-4E54-BE6F-25D689E48690}.Release|Any CPU.Build.0 = Release|Any CPU
+		{E9E3438D-4592-452E-BAF5-EC61E0DF1471}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{E9E3438D-4592-452E-BAF5-EC61E0DF1471}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{E9E3438D-4592-452E-BAF5-EC61E0DF1471}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{E9E3438D-4592-452E-BAF5-EC61E0DF1471}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
