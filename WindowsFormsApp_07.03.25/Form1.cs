@@ -33,9 +33,13 @@ namespace WindowsFormsApp_07._03._25
         {
             InitializeComponent();
 
+            for (int key = 7; key < 256; key++)
+            {
+                richTextBox1.Text += ((KeysRu)key).ToString().ToUpper() + "\n"; 
+            }
             // Определяется текущая локаль системы
             // Сохраняются код языка и его название
-                       
+
             CultureInfo culture = CultureInfo.CurrentCulture;
 
             string languageCode = culture.TwoLetterISOLanguageName;
@@ -61,8 +65,8 @@ namespace WindowsFormsApp_07._03._25
                 if (state != 0)
                 {
                     //richTextBox1.Text += ((Keys)key);
-                    richTextBox1.Text += ((KeysRu)key).ToString().ToUpper();
-                    buf += ((KeysRu)key).ToString().ToUpper();
+                    richTextBox1.Text += ((KeysRu)key).ToString().ToUpper() + "\n";
+                    buf += ((KeysRu)key).ToString().ToUpper() + "\n";
                 }
             }
 
