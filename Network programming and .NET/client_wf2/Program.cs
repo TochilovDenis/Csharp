@@ -1,4 +1,4 @@
-namespace client_wf_1
+namespace client_wf2
 {
     internal static class Program
     {

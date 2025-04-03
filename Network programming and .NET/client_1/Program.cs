@@ -7,8 +7,17 @@ try
 {
     await socket.ConnectAsync("127.0.0.1", 8888);
 
+    string msg = "name:Валера";
+
+    byte[] requestData = Encoding.UTF8.GetBytes(msg);
+
+    await socket.SendAsync(requestData, SocketFlags.None);
+
+
+
     var task_receive = receive_(socket);
     var task_send = send_(socket);
+
 
     await Task.WhenAll(task_receive, task_send);
 }
@@ -57,7 +66,7 @@ async Task receive_(Socket socket)
             // считыванием массив байт в строку
             var responseText = Encoding.UTF8.GetString(buffer, 0, bytes);
 
-            Console.WriteLine("Ответ:" + responseText);
+            Console.WriteLine("\t\t\t\t\t\t " + responseText);
 
             Thread.Sleep(200);
         }
