@@ -101,11 +101,18 @@ async Task teask_server(Socket client)
                 Console.WriteLine("команда-пользователи");
 
             }
+            else if (r_m_t.Command.IndexOf("file") == 0) // Команда для отправки файла
+            {
+                string path = @""; // путь к файлу картинки
+
+
+
+            }
             else if (r_m_t.Command.IndexOf("msg") == 0)
             {
 
                 byte[] requestData = Encoding.UTF8.GetBytes(resp_json + '\n');
- 
+
                 foreach (Socket socket in sockets)
                 {
                     //sockets   =   [1,2,3]
@@ -120,7 +127,7 @@ async Task teask_server(Socket client)
                         byte[] requestData2 = Encoding.UTF8.GetBytes(JsonSerializer.Serialize(r_m_t) + '\n');
                         await socket.SendAsync(requestData2, SocketFlags.None);
                     }
-                   
+
                 }
 
                 Console.WriteLine(resp_json);

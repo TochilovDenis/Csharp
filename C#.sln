@@ -55,6 +55,16 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "task_01", "task_01\task_01.
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WindowsFormsApp_07.03.25", "WindowsFormsApp_07.03.25\WindowsFormsApp_07.03.25.csproj", "{E9E3438D-4592-452E-BAF5-EC61E0DF1471}"
 EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Сетевое программирование в С# и .NET", "Сетевое программирование в С# и .NET", "{AE06B1E0-1502-445B-9258-B3D415076E85}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Глава 2. Протокол HTTP. Класс HttpClient и HttpListener", "Глава 2. Протокол HTTP. Класс HttpClient и HttpListener", "{1013FEE7-DBF1-494D-AEB5-7694D0063DD2}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "04.04.25", "Сетевое программирование в С# и .NET\Глава 2. Протокол HTTP. Класс HttpClient и HttpListener\04.04.25\04.04.25.csproj", "{13678180-53F5-4DC7-B57A-893B213FF6DB}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "test_server", "Сетевое программирование в С# и .NET\Глава 2. Протокол HTTP. Класс HttpClient и HttpListener\test_server\test_server.csproj", "{D60ED0D0-A244-4A82-961E-6986B093AD1E}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "test_client", "Сетевое программирование в С# и .NET\Глава 2. Протокол HTTP. Класс HttpClient и HttpListener\client\test_client.csproj", "{6CFF90B7-794E-4A8C-8DF2-9BD77D076A40}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -157,6 +167,18 @@ Global
 		{E9E3438D-4592-452E-BAF5-EC61E0DF1471}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{E9E3438D-4592-452E-BAF5-EC61E0DF1471}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{E9E3438D-4592-452E-BAF5-EC61E0DF1471}.Release|Any CPU.Build.0 = Release|Any CPU
+		{13678180-53F5-4DC7-B57A-893B213FF6DB}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{13678180-53F5-4DC7-B57A-893B213FF6DB}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{13678180-53F5-4DC7-B57A-893B213FF6DB}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{13678180-53F5-4DC7-B57A-893B213FF6DB}.Release|Any CPU.Build.0 = Release|Any CPU
+		{D60ED0D0-A244-4A82-961E-6986B093AD1E}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{D60ED0D0-A244-4A82-961E-6986B093AD1E}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{D60ED0D0-A244-4A82-961E-6986B093AD1E}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{D60ED0D0-A244-4A82-961E-6986B093AD1E}.Release|Any CPU.Build.0 = Release|Any CPU
+		{6CFF90B7-794E-4A8C-8DF2-9BD77D076A40}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{6CFF90B7-794E-4A8C-8DF2-9BD77D076A40}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{6CFF90B7-794E-4A8C-8DF2-9BD77D076A40}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{6CFF90B7-794E-4A8C-8DF2-9BD77D076A40}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -165,6 +187,10 @@ Global
 		{A2005E59-1BE0-471B-9FB7-A5022A62FE49} = {36D591C7-65C7-A0D1-1CBC-10CDE441BDC8}
 		{06BA46D0-E721-48A2-8431-C33514F3A632} = {36D591C7-65C7-A0D1-1CBC-10CDE441BDC8}
 		{F11DAF71-B4FB-4E54-BE6F-25D689E48690} = {06BA46D0-E721-48A2-8431-C33514F3A632}
+		{1013FEE7-DBF1-494D-AEB5-7694D0063DD2} = {AE06B1E0-1502-445B-9258-B3D415076E85}
+		{13678180-53F5-4DC7-B57A-893B213FF6DB} = {1013FEE7-DBF1-494D-AEB5-7694D0063DD2}
+		{D60ED0D0-A244-4A82-961E-6986B093AD1E} = {1013FEE7-DBF1-494D-AEB5-7694D0063DD2}
+		{6CFF90B7-794E-4A8C-8DF2-9BD77D076A40} = {1013FEE7-DBF1-494D-AEB5-7694D0063DD2}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {3C828510-0776-48B5-9B46-8B8AA098966A}

@@ -28,129 +28,139 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.richTextBox2 = new System.Windows.Forms.RichTextBox();
-            this.button1 = new System.Windows.Forms.Button();
-            this.groupBox1 = new System.Windows.Forms.GroupBox();
-            this.label1 = new System.Windows.Forms.Label();
-            this.button2 = new System.Windows.Forms.Button();
-            this.textBox1 = new System.Windows.Forms.TextBox();
-            this.flowLayoutPanel1 = new System.Windows.Forms.FlowLayoutPanel();
-            this.button3 = new System.Windows.Forms.Button();
-            this.richTextBox1 = new System.Windows.Forms.RichTextBox();
-            this.groupBox1.SuspendLayout();
-            this.SuspendLayout();
+            richTextBox2 = new RichTextBox();
+            button1 = new Button();
+            groupBox1 = new GroupBox();
+            label1 = new Label();
+            button2 = new Button();
+            textBox1 = new TextBox();
+            flowLayoutPanel1 = new FlowLayoutPanel();
+            button3 = new Button();
+            richTextBox1 = new RichTextBox();
+            groupBox1.SuspendLayout();
+            SuspendLayout();
             // 
             // richTextBox2
             // 
-            this.richTextBox2.Location = new System.Drawing.Point(12, 532);
-            this.richTextBox2.Name = "richTextBox2";
-            this.richTextBox2.Size = new System.Drawing.Size(390, 49);
-            this.richTextBox2.TabIndex = 1;
-            this.richTextBox2.Text = "";
-            this.richTextBox2.UseWaitCursor = true;
+            richTextBox2.Location = new Point(14, 583);
+            richTextBox2.Margin = new Padding(3, 4, 3, 4);
+            richTextBox2.Name = "richTextBox2";
+            richTextBox2.Size = new Size(445, 64);
+            richTextBox2.TabIndex = 1;
+            richTextBox2.Text = "";
+            richTextBox2.UseWaitCursor = true;
             // 
             // button1
             // 
-            this.button1.Location = new System.Drawing.Point(408, 532);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(83, 49);
-            this.button1.TabIndex = 2;
-            this.button1.Text = "отправить";
-            this.button1.UseVisualStyleBackColor = true;
-            this.button1.UseWaitCursor = true;
-            this.button1.Click += new System.EventHandler(this.button1_Click);
+            button1.Location = new Point(466, 583);
+            button1.Margin = new Padding(3, 4, 3, 4);
+            button1.Name = "button1";
+            button1.Size = new Size(95, 65);
+            button1.TabIndex = 2;
+            button1.Text = "отправить";
+            button1.UseVisualStyleBackColor = true;
+            button1.UseWaitCursor = true;
+            button1.Click += button1_Click;
             // 
             // groupBox1
             // 
-            this.groupBox1.Controls.Add(this.label1);
-            this.groupBox1.Controls.Add(this.button2);
-            this.groupBox1.Controls.Add(this.textBox1);
-            this.groupBox1.Location = new System.Drawing.Point(610, 13);
-            this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Size = new System.Drawing.Size(528, 568);
-            this.groupBox1.TabIndex = 3;
-            this.groupBox1.TabStop = false;
-            this.groupBox1.Text = "Регистрация";
-            this.groupBox1.UseWaitCursor = true;
+            groupBox1.Controls.Add(label1);
+            groupBox1.Controls.Add(button2);
+            groupBox1.Controls.Add(textBox1);
+            groupBox1.Location = new Point(596, 39);
+            groupBox1.Margin = new Padding(3, 4, 3, 4);
+            groupBox1.Name = "groupBox1";
+            groupBox1.Padding = new Padding(3, 4, 3, 4);
+            groupBox1.Size = new Size(460, 524);
+            groupBox1.TabIndex = 3;
+            groupBox1.TabStop = false;
+            groupBox1.Text = "Регистрация";
+            groupBox1.UseWaitCursor = true;
             // 
             // label1
             // 
-            this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(156, 140);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(107, 15);
-            this.label1.TabIndex = 2;
-            this.label1.Text = "Введите ваше имя";
-            this.label1.UseWaitCursor = true;
+            label1.AutoSize = true;
+            label1.Location = new Point(155, 146);
+            label1.Name = "label1";
+            label1.Size = new Size(137, 20);
+            label1.TabIndex = 2;
+            label1.Text = "Введите ваше имя";
+            label1.UseWaitCursor = true;
             // 
             // button2
             // 
-            this.button2.Location = new System.Drawing.Point(334, 289);
-            this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(75, 23);
-            this.button2.TabIndex = 1;
-            this.button2.Text = "connect";
-            this.button2.UseVisualStyleBackColor = true;
-            this.button2.UseWaitCursor = true;
-            this.button2.Click += new System.EventHandler(this.button2_Click);
+            button2.Location = new Point(176, 254);
+            button2.Margin = new Padding(3, 4, 3, 4);
+            button2.Name = "button2";
+            button2.Size = new Size(86, 31);
+            button2.TabIndex = 1;
+            button2.Text = "connect";
+            button2.UseVisualStyleBackColor = true;
+            button2.UseWaitCursor = true;
+            button2.Click += button2_Click;
             // 
             // textBox1
             // 
-            this.textBox1.Location = new System.Drawing.Point(223, 181);
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(200, 23);
-            this.textBox1.TabIndex = 0;
-            this.textBox1.UseWaitCursor = true;
+            textBox1.Location = new Point(111, 193);
+            textBox1.Margin = new Padding(3, 4, 3, 4);
+            textBox1.Name = "textBox1";
+            textBox1.Size = new Size(228, 27);
+            textBox1.TabIndex = 0;
+            textBox1.UseWaitCursor = true;
             // 
             // flowLayoutPanel1
             // 
-            this.flowLayoutPanel1.AutoScroll = true;
-            this.flowLayoutPanel1.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
-            this.flowLayoutPanel1.FlowDirection = System.Windows.Forms.FlowDirection.TopDown;
-            this.flowLayoutPanel1.Location = new System.Drawing.Point(12, 29);
-            this.flowLayoutPanel1.Name = "flowLayoutPanel1";
-            this.flowLayoutPanel1.Size = new System.Drawing.Size(479, 489);
-            this.flowLayoutPanel1.TabIndex = 4;
-            this.flowLayoutPanel1.UseWaitCursor = true;
+            flowLayoutPanel1.AutoScroll = true;
+            flowLayoutPanel1.AutoSizeMode = AutoSizeMode.GrowAndShrink;
+            flowLayoutPanel1.FlowDirection = FlowDirection.TopDown;
+            flowLayoutPanel1.Location = new Point(14, 39);
+            flowLayoutPanel1.Margin = new Padding(3, 4, 3, 4);
+            flowLayoutPanel1.Name = "flowLayoutPanel1";
+            flowLayoutPanel1.Size = new Size(547, 524);
+            flowLayoutPanel1.TabIndex = 4;
+            flowLayoutPanel1.UseWaitCursor = true;
             // 
             // button3
             // 
-            this.button3.Location = new System.Drawing.Point(12, 587);
-            this.button3.Name = "button3";
-            this.button3.Size = new System.Drawing.Size(75, 23);
-            this.button3.TabIndex = 5;
-            this.button3.Text = "button3";
-            this.button3.UseVisualStyleBackColor = true;
-            this.button3.UseWaitCursor = true;
-            this.button3.Click += new System.EventHandler(this.button3_Click);
+            button3.Location = new Point(14, 657);
+            button3.Margin = new Padding(3, 4, 3, 4);
+            button3.Name = "button3";
+            button3.Size = new Size(159, 31);
+            button3.TabIndex = 5;
+            button3.Text = "Список клиента";
+            button3.UseVisualStyleBackColor = true;
+            button3.UseWaitCursor = true;
+            button3.Click += button3_Click;
             // 
             // richTextBox1
             // 
-            this.richTextBox1.Location = new System.Drawing.Point(513, 29);
-            this.richTextBox1.Name = "richTextBox1";
-            this.richTextBox1.Size = new System.Drawing.Size(412, 552);
-            this.richTextBox1.TabIndex = 6;
-            this.richTextBox1.Text = "";
-            this.richTextBox1.UseWaitCursor = true;
+            richTextBox1.Location = new Point(596, 39);
+            richTextBox1.Margin = new Padding(3, 4, 3, 4);
+            richTextBox1.Name = "richTextBox1";
+            richTextBox1.Size = new Size(460, 524);
+            richTextBox1.TabIndex = 6;
+            richTextBox1.Text = "";
+            richTextBox1.UseWaitCursor = true;
             // 
             // Form1
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
-            this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1125, 649);
-            this.Controls.Add(this.button3);
-            this.Controls.Add(this.groupBox1);
-            this.Controls.Add(this.button1);
-            this.Controls.Add(this.richTextBox2);
-            this.Controls.Add(this.flowLayoutPanel1);
-            this.Controls.Add(this.richTextBox1);
-            this.Cursor = System.Windows.Forms.Cursors.WaitCursor;
-            this.Name = "Form1";
-            this.Text = "Чатик";
-            this.UseWaitCursor = true;
-            this.groupBox1.ResumeLayout(false);
-            this.groupBox1.PerformLayout();
-            this.ResumeLayout(false);
+            AutoScaleDimensions = new SizeF(8F, 20F);
+            AutoScaleMode = AutoScaleMode.Font;
+            ClientSize = new Size(1203, 718);
+            Controls.Add(button3);
+            Controls.Add(groupBox1);
+            Controls.Add(button1);
+            Controls.Add(richTextBox2);
+            Controls.Add(flowLayoutPanel1);
+            Controls.Add(richTextBox1);
+            Cursor = Cursors.WaitCursor;
+            Margin = new Padding(3, 4, 3, 4);
+            Name = "Form1";
+            Text = "Чатик";
+            UseWaitCursor = true;
+            groupBox1.ResumeLayout(false);
+            groupBox1.PerformLayout();
+            ResumeLayout(false);
 
         }
 
