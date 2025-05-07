@@ -26,13 +26,10 @@ namespace Ping_Pong
 
         private string _name = "";
 
-
         // Система подсчета очков
         int playerScore_1 = 0;    // Очки игрока
         int playerScore_2 = 0;    // Очки компьютера
 
-        // Параметры ИИ компьютера
-        int computer_speed_change = 50;                      // Счетчик смены скорости компьютера
         int playerSpeed = 8;                                 // Скорость движения игрока
 
         // Массивы для случайной генерации скоростей
@@ -103,7 +100,7 @@ namespace Ping_Pong
 
             // Обновление отображения счета
             player_score_1.Text = _name + ":" + playerScore_1;             // Отображение очков первого игрока
-            player_score_2.Text = _name + ": " + playerScore_2;             // Отображение очков второго компьютера
+            player_score_2.Text = _name + ": " + playerScore_2;            // Отображение очков второго компьютера
 
          
             // Обработка столкновений со стенами
@@ -212,7 +209,7 @@ namespace Ping_Pong
                 socket.ConnectAsync("127.0.0.1", 8888);
 
                 //playerScore_2.Text = name + ":";
-                _name= name;
+                _name = name;
 
                 //Создаем объект класса P_Server 
                 P_Server play = new P_Server("name", name);
