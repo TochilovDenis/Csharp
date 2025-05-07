@@ -1,6 +1,6 @@
 ﻿namespace Ping_Pong
 {
-    partial class Form4
+    partial class User
     {
         /// <summary>
         /// Required designer variable.

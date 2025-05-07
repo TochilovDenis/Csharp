@@ -1,6 +1,6 @@
 ﻿namespace Ping_Pong
 {
-    partial class Form2
+    partial class PlayerPlayer
     {
         /// <summary>
         /// Required designer variable.
@@ -29,6 +29,7 @@
         private void InitializeComponent()
         {
             components = new System.ComponentModel.Container();
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(PlayerPlayer));
             player_1 = new PictureBox();
             player_2 = new PictureBox();
             ball = new PictureBox();
@@ -43,7 +44,7 @@
             // player_1
             // 
             player_1.BackColor = Color.CadetBlue;
-            player_1.Image = Properties.Resources.player;
+            player_1.Image = (Image)resources.GetObject("player_1.Image");
             player_1.Location = new Point(12, 186);
             player_1.Name = "player_1";
             player_1.Size = new Size(27, 127);
@@ -54,7 +55,7 @@
             // player_2
             // 
             player_2.BackColor = Color.CadetBlue;
-            player_2.Image = Properties.Resources.computer;
+            player_2.Image = (Image)resources.GetObject("player_2.Image");
             player_2.Location = new Point(887, 186);
             player_2.Name = "player_2";
             player_2.Size = new Size(27, 127);
@@ -65,8 +66,7 @@
             // ball
             // 
             ball.BackColor = Color.CadetBlue;
-            ball.BackgroundImage = Properties.Resources.ball;
-            ball.Image = Properties.Resources.ball;
+            ball.Image = (Image)resources.GetObject("ball.Image");
             ball.Location = new Point(434, 239);
             ball.Name = "ball";
             ball.Size = new Size(27, 27);
@@ -104,7 +104,7 @@
             player_score_1.TabIndex = 7;
             player_score_1.Text = "Player1: 00";
             // 
-            // Form2
+            // PlayerPlayer
             // 
             AutoScaleDimensions = new SizeF(120F, 120F);
             AutoScaleMode = AutoScaleMode.Dpi;
@@ -116,8 +116,8 @@
             Controls.Add(player_2);
             Controls.Add(player_1);
             DoubleBuffered = true;
-            Name = "Form2";
-            Text = "Pong Game";
+            Name = "PlayerPlayer";
+            Text = "Ping Pong Game";
             KeyDown += keyIsDown;
             KeyUp += keyIsUp;
             ((System.ComponentModel.ISupportInitialize)player_1).EndInit();
@@ -133,7 +133,6 @@
         private PictureBox player_2;
         private PictureBox ball;
         private System.Windows.Forms.Timer gameTimer;
-        private Label label1;
         private Label player_score_2;
         private Label player_score_1;
     }

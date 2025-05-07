@@ -1,6 +1,6 @@
 ﻿namespace Ping_Pong
 {
-    partial class Form1
+    partial class PlayerCPU
     {
         /// <summary>
         ///  Required designer variable.
@@ -29,6 +29,7 @@
         private void InitializeComponent()
         {
             components = new System.ComponentModel.Container();
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(PlayerCPU));
             player = new PictureBox();
             cpu = new PictureBox();
             ball = new PictureBox();
@@ -45,7 +46,7 @@
             // player
             // 
             player.BackColor = Color.CadetBlue;
-            player.Image = Properties.Resources.player;
+            player.Image = (Image)resources.GetObject("player.Image");
             player.Location = new Point(12, 186);
             player.Name = "player";
             player.Size = new Size(27, 127);
@@ -56,7 +57,7 @@
             // cpu
             // 
             cpu.BackColor = Color.CadetBlue;
-            cpu.Image = Properties.Resources.computer;
+            cpu.Image = (Image)resources.GetObject("cpu.Image");
             cpu.Location = new Point(887, 186);
             cpu.Name = "cpu";
             cpu.Size = new Size(27, 127);
@@ -67,11 +68,10 @@
             // ball
             // 
             ball.BackColor = Color.CadetBlue;
-            ball.BackgroundImage = Properties.Resources.ball;
-            ball.Image = Properties.Resources.ball;
-            ball.Location = new Point(434, 239);
+            ball.Image = (Image)resources.GetObject("ball.Image");
+            ball.Location = new Point(434, 237);
             ball.Name = "ball";
-            ball.Size = new Size(27, 27);
+            ball.Size = new Size(27, 29);
             ball.SizeMode = PictureBoxSizeMode.StretchImage;
             ball.TabIndex = 2;
             ball.TabStop = false;
@@ -130,7 +130,7 @@
             label2.TabIndex = 7;
             label2.Text = "CPU:";
             // 
-            // Form1
+            // PlayerCPU
             // 
             AutoScaleDimensions = new SizeF(120F, 120F);
             AutoScaleMode = AutoScaleMode.Dpi;
@@ -144,8 +144,8 @@
             Controls.Add(cpu);
             Controls.Add(player);
             DoubleBuffered = true;
-            Name = "Form1";
-            Text = "Pong Game";
+            Name = "PlayerCPU";
+            Text = "Ping Pong Game";
             KeyDown += keyIsDown;
             KeyUp += keyIsUp;
             ((System.ComponentModel.ISupportInitialize)player).EndInit();

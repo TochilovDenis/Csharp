@@ -1,6 +1,6 @@
 ﻿namespace Ping_Pong
 {
-    partial class Form3
+    partial class Ping_Pong_Games
     {
         /// <summary>
         /// Required designer variable.
@@ -63,7 +63,7 @@
             quit.UseVisualStyleBackColor = true;
             quit.Click += quit_Click;
             // 
-            // Form3
+            // Ping_Pong_Games
             // 
             AutoScaleDimensions = new SizeF(8F, 20F);
             AutoScaleMode = AutoScaleMode.Font;
@@ -71,8 +71,8 @@
             Controls.Add(quit);
             Controls.Add(game_with_user);
             Controls.Add(player_and_cpu);
-            Name = "Form3";
-            Text = "Form3";
+            Name = "Ping_Pong_Games";
+            Text = "PingPongGames";
             ResumeLayout(false);
         }
 
