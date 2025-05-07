@@ -29,29 +29,20 @@
         private void InitializeComponent()
         {
             textBox1 = new TextBox();
-            label1 = new Label();
             btn_connect = new Button();
+            label1 = new Label();
             SuspendLayout();
             // 
             // textBox1
             // 
-            textBox1.Location = new Point(337, 106);
+            textBox1.Location = new Point(362, 43);
             textBox1.Name = "textBox1";
             textBox1.Size = new Size(193, 27);
             textBox1.TabIndex = 0;
             // 
-            // label1
-            // 
-            label1.AutoSize = true;
-            label1.Location = new Point(191, 109);
-            label1.Name = "label1";
-            label1.Size = new Size(140, 20);
-            label1.TabIndex = 1;
-            label1.Text = "Введите ваше имя:";
-            // 
             // btn_connect
             // 
-            btn_connect.Location = new Point(536, 104);
+            btn_connect.Location = new Point(561, 41);
             btn_connect.Name = "btn_connect";
             btn_connect.Size = new Size(94, 29);
             btn_connect.TabIndex = 2;
@@ -59,11 +50,20 @@
             btn_connect.UseVisualStyleBackColor = true;
             btn_connect.Click += btn_connect_Click;
             // 
+            // label1
+            // 
+            label1.AutoSize = true;
+            label1.Location = new Point(63, 50);
+            label1.Name = "label1";
+            label1.Size = new Size(282, 20);
+            label1.TabIndex = 1;
+            label1.Text = "Введите ваше имя для первого игрока:";
+            // 
             // Form4
             // 
             AutoScaleDimensions = new SizeF(8F, 20F);
             AutoScaleMode = AutoScaleMode.Font;
-            ClientSize = new Size(800, 284);
+            ClientSize = new Size(747, 124);
             Controls.Add(btn_connect);
             Controls.Add(label1);
             Controls.Add(textBox1);
@@ -76,7 +76,7 @@
         #endregion
 
         private TextBox textBox1;
-        private Label label1;
         private Button btn_connect;
+        private Label label1;
     }
 }

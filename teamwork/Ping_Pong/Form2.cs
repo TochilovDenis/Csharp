@@ -25,6 +25,8 @@ namespace Ping_Pong
         private int ballY = 5;                                // Вертикальная компонента скорости мяча
 
         private string _name = "";
+        private string _name2 = "";
+
 
         // Система подсчета очков
         int playerScore_1 = 0;    // Очки игрока
@@ -100,7 +102,7 @@ namespace Ping_Pong
 
             // Обновление отображения счета
             player_score_1.Text = _name + ":" + playerScore_1;             // Отображение очков первого игрока
-            player_score_2.Text = _name + ": " + playerScore_2;            // Отображение очков второго компьютера
+            player_score_2.Text = _name2 + ": " + playerScore_2;            // Отображение очков второго компьютера
 
          
             // Обработка столкновений со стенами
@@ -210,9 +212,10 @@ namespace Ping_Pong
 
                 //playerScore_2.Text = name + ":";
                 _name = name;
-
+ 
                 //Создаем объект класса P_Server 
                 P_Server play = new P_Server("name", name);
+
 
                 //Сериализуем объект P_Server в json строку   ->    {"Command":"name","Text":"$textBox1.Text$"}
                 string json_msg = JsonSerializer.Serialize(play);
