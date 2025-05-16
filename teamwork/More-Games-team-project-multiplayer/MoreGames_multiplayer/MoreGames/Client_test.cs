@@ -13,7 +13,7 @@ namespace MoreGames
 
         public ClientWebSocket ws = new ClientWebSocket();
         private byte[] buf = new byte[1056];
-        Client_test()
+        public Client_test()
         {
             Start();
         }
@@ -41,7 +41,7 @@ namespace MoreGames
 
         }
 
-        async Task Send(string message)
+       public  async Task Send(string message)
         {
             byte[] data = Encoding.ASCII.GetBytes(message);
             await ws.SendAsync(data, WebSocketMessageType.Text,

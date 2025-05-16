@@ -2,6 +2,7 @@
 using System.Text.Json;
 using System.Text;
 using System.Xml.Linq;
+using System.Net.WebSockets;
 
 namespace Ping_Pong
 {
@@ -9,6 +10,8 @@ namespace Ping_Pong
     {
         // Контакт
         public Socket socket;
+        public ClientWebSocket ws = new ClientWebSocket();
+        private byte[] buf = new byte[1056];
 
         // Игровые параметры
         private Random rand = new Random();                   // Генератор случайных чисел
@@ -208,7 +211,11 @@ namespace Ping_Pong
             try
             {
                 //Подключение к серверу
-                socket.ConnectAsync("127.0.0.1", 8888);
+                await ws.ConnectAsync(new Uri("ws://localhost:5000/ws"), CancellationToken.None);
+                var result = await ws.ReceiveAsync(buf, CancellationToken.None);
+                Encoding.ASCII.GetString(buf, 0, result.Count);
+
+                //socket.ConnectAsync("127.0.0.1", 8888);
 
                 //playerScore_2.Text = name + ":";
                 _name = name;
@@ -221,9 +228,20 @@ namespace Ping_Pong
                 string json_msg = JsonSerializer.Serialize(play);
 
                 //формируем байтовый массив из строки json_msg
-                byte[] requestData = Encoding.UTF8.GetBytes(json_msg + '\n');
-                //отправляем сообщение серверу
+                byte[] requestData = Encoding.UTF8.GetBytes("cr_r;room1");
                 await socket.SendAsync(requestData, SocketFlags.None);
+
+
+
+                byte[] requestData1 = Encoding.UTF8.GetBytes("connct;room1");
+                await socket.SendAsync(requestData1, SocketFlags.None);
+
+
+                byte[] requestData2 = Encoding.UTF8.GetBytes("cmd;room1;up");
+                //отправляем сообщение серверу
+                await socket.SendAsync(requestData2, SocketFlags.None);
+
+
             }
             catch (SocketException)
             {

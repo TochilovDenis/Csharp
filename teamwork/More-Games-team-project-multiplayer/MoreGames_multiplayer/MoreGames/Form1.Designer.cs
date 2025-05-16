@@ -31,7 +31,7 @@
             FlappyBird = new Button();
             TicTacToe = new Button();
             Memo = new Button();
-            Tetris = new Button();
+            Ping_Pong = new Button();
             Create_room = new Button();
             Connect_room = new Button();
             CreateServer = new Button();
@@ -40,9 +40,10 @@
             // 
             // RememberGame
             // 
-            RememberGame.Location = new Point(241, 116);
+            RememberGame.Location = new Point(275, 155);
+            RememberGame.Margin = new Padding(3, 4, 3, 4);
             RememberGame.Name = "RememberGame";
-            RememberGame.Size = new Size(91, 80);
+            RememberGame.Size = new Size(104, 107);
             RememberGame.TabIndex = 0;
             RememberGame.Text = "Игра на запоминание";
             RememberGame.UseVisualStyleBackColor = true;
@@ -50,9 +51,10 @@
             // 
             // FlappyBird
             // 
-            FlappyBird.Location = new Point(354, 116);
+            FlappyBird.Location = new Point(405, 155);
+            FlappyBird.Margin = new Padding(3, 4, 3, 4);
             FlappyBird.Name = "FlappyBird";
-            FlappyBird.Size = new Size(91, 80);
+            FlappyBird.Size = new Size(104, 107);
             FlappyBird.TabIndex = 1;
             FlappyBird.Text = "flappy bird";
             FlappyBird.UseVisualStyleBackColor = true;
@@ -60,9 +62,10 @@
             // 
             // TicTacToe
             // 
-            TicTacToe.Location = new Point(464, 116);
+            TicTacToe.Location = new Point(530, 155);
+            TicTacToe.Margin = new Padding(3, 4, 3, 4);
             TicTacToe.Name = "TicTacToe";
-            TicTacToe.Size = new Size(91, 80);
+            TicTacToe.Size = new Size(104, 107);
             TicTacToe.TabIndex = 1;
             TicTacToe.Text = "Крестики нолики";
             TicTacToe.UseVisualStyleBackColor = true;
@@ -70,29 +73,32 @@
             // 
             // Memo
             // 
-            Memo.Location = new Point(576, 116);
+            Memo.Location = new Point(658, 155);
+            Memo.Margin = new Padding(3, 4, 3, 4);
             Memo.Name = "Memo";
-            Memo.Size = new Size(91, 80);
+            Memo.Size = new Size(104, 107);
             Memo.TabIndex = 2;
             Memo.Text = "Подберите пару (не точно)";
             Memo.UseVisualStyleBackColor = true;
             Memo.Click += Memo_Click;
             // 
-            // Tetris
+            // Ping_Pong
             // 
-            Tetris.Location = new Point(683, 116);
-            Tetris.Name = "Tetris";
-            Tetris.Size = new Size(91, 80);
-            Tetris.TabIndex = 2;
-            Tetris.Text = "тетрис";
-            Tetris.UseVisualStyleBackColor = true;
-            Tetris.Click += Tetris_Click;
+            Ping_Pong.Location = new Point(781, 155);
+            Ping_Pong.Margin = new Padding(3, 4, 3, 4);
+            Ping_Pong.Name = "Ping_Pong";
+            Ping_Pong.Size = new Size(104, 107);
+            Ping_Pong.TabIndex = 2;
+            Ping_Pong.Text = "Пинг Понг";
+            Ping_Pong.UseVisualStyleBackColor = true;
+            Ping_Pong.Click += Tetris_Click;
             // 
             // Create_room
             // 
-            Create_room.Location = new Point(241, 392);
+            Create_room.Location = new Point(275, 523);
+            Create_room.Margin = new Padding(3, 4, 3, 4);
             Create_room.Name = "Create_room";
-            Create_room.Size = new Size(174, 58);
+            Create_room.Size = new Size(199, 77);
             Create_room.TabIndex = 3;
             Create_room.Text = "Создать комнату";
             Create_room.UseVisualStyleBackColor = true;
@@ -100,9 +106,10 @@
             // 
             // Connect_room
             // 
-            Connect_room.Location = new Point(600, 392);
+            Connect_room.Location = new Point(686, 523);
+            Connect_room.Margin = new Padding(3, 4, 3, 4);
             Connect_room.Name = "Connect_room";
-            Connect_room.Size = new Size(174, 58);
+            Connect_room.Size = new Size(199, 77);
             Connect_room.TabIndex = 4;
             Connect_room.Text = "присоединится";
             Connect_room.UseVisualStyleBackColor = true;
@@ -110,9 +117,10 @@
             // 
             // CreateServer
             // 
-            CreateServer.Location = new Point(241, 456);
+            CreateServer.Location = new Point(275, 608);
+            CreateServer.Margin = new Padding(3, 4, 3, 4);
             CreateServer.Name = "CreateServer";
-            CreateServer.Size = new Size(174, 62);
+            CreateServer.Size = new Size(199, 83);
             CreateServer.TabIndex = 5;
             CreateServer.Text = "Создать сервер";
             CreateServer.UseVisualStyleBackColor = true;
@@ -124,17 +132,18 @@
             // 
             // Form1
             // 
-            AutoScaleDimensions = new SizeF(7F, 15F);
+            AutoScaleDimensions = new SizeF(8F, 20F);
             AutoScaleMode = AutoScaleMode.Font;
-            ClientSize = new Size(1029, 597);
+            ClientSize = new Size(1176, 796);
             Controls.Add(CreateServer);
             Controls.Add(Connect_room);
             Controls.Add(Create_room);
-            Controls.Add(Tetris);
+            Controls.Add(Ping_Pong);
             Controls.Add(Memo);
             Controls.Add(TicTacToe);
             Controls.Add(FlappyBird);
             Controls.Add(RememberGame);
+            Margin = new Padding(3, 4, 3, 4);
             Name = "Form1";
             Text = "Form1";
             ResumeLayout(false);
@@ -146,7 +155,7 @@
         private Button FlappyBird;
         private Button TicTacToe;
         private Button Memo;
-        private Button Tetris;
+        private Button Ping_Pong;
         private Button Create_room;
         private Button Connect_room;
         private Button CreateServer;
